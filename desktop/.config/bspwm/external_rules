@@ -6,11 +6,10 @@ instance=$3
 consequences=$4
 title=$(xtitle "$wid")
 
-if [ "$class = "Steam" ]
-then
-	if ["title" = "Steam Guard - Computer Authorization Required" ]
-	then
-		echo "floating=on follow=on"
-	fi
+# Don't tile Steam Guard authentication window
+if [ "$class" = "Steam" ] ; then
+    if ["$title" = "Steam Guard - Computer Authorization Required" ] ; then
+        echo "state=floating center=true follow=on"
+    fi
 fi
 
