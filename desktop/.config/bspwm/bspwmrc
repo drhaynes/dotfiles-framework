@@ -10,6 +10,12 @@ ulauncher --hide-window --no-window-shadow &
 # Start redshift with 2700K night-time colour temp
 redshift -l 50:0 -t 6500:2700 &
 
+# Desktop wallpaper manager
+nitrogen --restore &
+
+# Status bar
+polybar &
+
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc config border_width         0
