@@ -1,10 +1,14 @@
 #! /bin/sh
 
-# pgrep -x sxhkd > /dev/null || sxhkd &
-
+# Start hotkey daemon
 pkill sxhkd
 sxhkd &
+
+# Program launcher
 ulauncher --hide-window --no-window-shadow &
+
+# Start redshift with 2700K night-time colour temp
+redshift -l 50:0 -t 6500:2700 &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
